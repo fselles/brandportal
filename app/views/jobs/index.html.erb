@@ -5,10 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Contactperson</th>
+      <th>Jobnr</th>
+      <th>Artikelnummer</th>
       <th>Title</th>
-      <th>Description</th>
-      <th>Article number</th>
+      <th>Actie</th>
+      <th>Laatste actie</th>
       <th>Status</th>
       <th colspan="3"></th>
     </tr>
@@ -17,14 +18,15 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.contactperson %></td>
+        <td><%= job.id %></td>
+        <td><%= job.article_number %></td>
         <td><%= job.title %></td>
         <td><%= job.description %></td>
-        <td><%= job.article_number %></td>
+        <td><%= job.contactperson %></td>
         <td><%= job.status %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Weergeven', job %></td>
+        <td><%= link_to 'Aanpassen', edit_job_path(job) %></td>
+        <td><%= link_to 'Verwijderen', job, method: :delete, data: { confirm: 'Zeker weten?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'Nieuwe Job', new_job_path %>

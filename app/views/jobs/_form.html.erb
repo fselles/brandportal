@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :contactperson %>
+    <%= form.label :contactpersoon %>
     <%= form.text_field :contactperson, id: :job_contactperson %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :titel %>
     <%= form.text_field :title, id: :job_title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :actie %>
     <%= form.text_area :description, id: :job_description %>
   </div>
 
   <div class="field">
-    <%= form.label :article_number %>
+    <%= form.label :artikelnummer %>
     <%= form.text_field :article_number, id: :job_article_number %>
   </div>
 
@@ -37,6 +37,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Opslaan" %>
   </div>
 <% end %>
