@@ -1,6 +1,6 @@
-<h1>Editing Task</h1>
+<h1>Taak aanpassen</h1>
 
-<%= render 'form', task: @task %>
+<%= render 'form',job: @job, task: @task %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Taak weergeven', job_task_path(@job, @task) %> |
+<%= link_to 'Overzicht taken', job_tasks_path(@job) %>

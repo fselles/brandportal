@@ -27,6 +27,7 @@
         <td><%= link_to 'Weergeven', job %></td>
         <td><%= link_to 'Aanpassen', edit_job_path(job) %></td>
         <td><%= link_to 'Verwijderen', job, method: :delete, data: { confirm: 'Zeker weten?' } %></td>
+        <td><%= link_to 'Taken', job_tasks_path(job) %></td>
       </tr>
     <% end %>
   </tbody>
