@@ -1,19 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>Datum:&nbsp;</strong>
+      <%= @task.created_at.to_date.iso8601 %>
+    </li>
 
-<p>
-  <strong>Omschrijving:</strong>
-  <%= @task.description %>
-</p>
+    <li class="list-group-item">
+      <strong>Omschrijving:&nbsp;</strong>
+      <%= @task.description %>
+    </li>
 
-<p>
-  <strong>File:</strong>
-  <%= @task.file %>
-</p>
+    <li class="list-group-item">
+      <strong>File:&nbsp;</strong>
+      <%= @task.file %>
+    </li>
 
-<p>
-  <strong>Job:</strong>
-  <%= @task.job.title %>
-</p>
+    <li class="list-group-item">
+      <strong>Door:&nbsp;</strong>
+      Contactpersoon koppelen
+    </li>
 
-<%= link_to 'Taak aanpassen', edit_job_task_path(@job, @task) %> |
-<%= link_to 'Overzicht taken', job_tasks_path(@job) %>
+  </ul>
+  <div class="btn-group" role="group">
+    <%= link_to 'Overzicht taken', job_tasks_path(@job), :class => "btn btn-secondary" %>
+    <%= link_to 'Taak aanpassen', edit_job_task_path(@job, @task), :class => "btn btn-secondary" %>
+    <%= link_to 'Taak verwijderen', job_task_path(@job, @task), method: :delete, data: { confirm: 'Zeker weten?' },
+                                                       :class => "btn btn-secondary" %>
+  </div>
+</div>
+

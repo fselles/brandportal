@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <strong>Contactpersoon:&nbsp;</strong>
+    <%= @job.contactperson %>
+    </li>
 
-<p>
-  <strong>Contactpersoon:</strong>
-  <%= @job.contactperson %>
-</p>
+    <li class="list-group-item">
+    <strong>Titel:&nbsp;</strong>
+    <%= @job.title %>
+    </li>
 
-<p>
-  <strong>Titel:</strong>
-  <%= @job.title %>
-</p>
+    <li class="list-group-item">
+    <strong>Actie:&nbsp;</strong>
+    <%= @job.description %>
+    </li>
 
-<p>
-  <strong>Actie:</strong>
-  <%= @job.description %>
-</p>
+    <li class="list-group-item">
+    <strong>Artikel nummer:&nbsp;</strong>
+    <%= @job.article_number %>
+    </li>
 
-<p>
-  <strong>Artikel nummer:</strong>
-  <%= @job.article_number %>
-</p>
+    <li class="list-group-item">
+    <strong>Status:&nbsp;</strong>
+    <%= @job.status %>
+    </li>
 
-<p>
-  <strong>Status:</strong>
-  <%= @job.status %>
-</p>
-
-<%= link_to 'Aanpassen', edit_job_path(@job) %> |
-<%= link_to 'Overzicht jobs', jobs_path %>
+  </ul>
+  <br>
+  <div class="btn-group" role="group">
+    <%= link_to 'Overzicht jobs', jobs_path, :class => "btn btn-secondary" %>
+    <%= link_to 'Taken', job_tasks_path(@job), :class => "btn btn-secondary" %>
+    <%= link_to 'Aanpassen', edit_job_path(@job), :class => "btn btn-secondary" %>
+    <%= link_to 'Verwijderen', job_path(@job), method: :delete, data: { confirm: 'Zeker weten?' },
+                                                                     :class => "btn btn-secondary" %>
+  </div>
+</div>

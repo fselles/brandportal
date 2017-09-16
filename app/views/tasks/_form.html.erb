@@ -1,32 +1,20 @@
 <%= form_with(model: [job, task], local: true) do |form| %>
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+  <%= render "Shared/errors", object: task %>
 
-      <ul>
-      <% task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :Omschrijving %>
-    <%= form.text_area :description, id: :task_description %>
+<form>
+  <div class="form_group">
+    <%= form.label :Omschrijving, class: 'form-control' %>
+    <%= form.text_area :description, id: :task_description, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :Bestand %>
-    <%= form.text_field :file, id: :task_file %>
+  <div class="form_group">
+    <%= form.label :Bestand, class: 'form-control' %>
+    <%= form.text_field :file, id: :task_file, class: 'form-control' %>
   </div>
-
-  <div class="field">
-    <%= form.label :job_nummer %>
-    <%= form.text_field :job_id, id: :task_job_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Opslaan" %>
+<br>
+  <div class="btn-group" role="group">
+    <%= form.submit "Opslaan", :class => "btn btn-secondary" %>
   </div>
 <% end %>
+
+</form>

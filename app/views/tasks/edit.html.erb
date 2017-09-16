@@ -1,6 +1,8 @@
 <h1>Taak aanpassen</h1>
 
-<%= render 'form',job: @job, task: @task %>
-
-<%= link_to 'Taak weergeven', job_task_path(@job, @task) %> |
-<%= link_to 'Overzicht taken', job_tasks_path(@job) %>
+  <%= render 'form',job: @job, task: @task %>
+<br>
+<div>
+  <%= link_to 'Taak weergeven', job_task_path(@job, @task), :class => "btn btn-secondary" %>
+  <%= link_to 'Overzicht taken', job_tasks_path(@job), :class => "btn btn-secondary" %>
+</div>

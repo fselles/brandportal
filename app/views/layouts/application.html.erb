@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Brandportal</title>
+    <title>BrandPortal Auping</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <div class="container">
+
+       <div class="row">
+          <div class="col-sm-1">
+          <!-- Render menubar partial in views/shared -->
+
+          </div>
+          <div class="col-sm-11">
+            <div>
+              <% flash_messages %>
+            </div>
+                <%= yield %>
+          </div>
+        </div>
+      </div>
 </html>

@@ -1,5 +1,7 @@
 <h1>Nieuwe taak</h1>
 
-<%= render 'form',job: @job, task: @task %>
-
-<%= link_to 'Overzicht taken', job_tasks_path %>
+  <%= render 'form',job: @job, task: @task %>
+<br>
+<div>
+  <%= link_to 'Overzicht taken', job_tasks_path, :class => "btn btn-secondary" %>
+</div>
