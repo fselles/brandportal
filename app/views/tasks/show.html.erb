@@ -12,7 +12,7 @@
 
     <li class="list-group-item">
       <strong>File:&nbsp;</strong>
-      <%= @task.file %>
+      <%=  link_to (@task.file_identifier), @task.file.url, target: '_blank' if @task.file? %>
     </li>
 
     <li class="list-group-item">
@@ -21,6 +21,7 @@
     </li>
 
   </ul>
+  <br>
   <div class="btn-group" role="group">
     <%= link_to 'Overzicht taken', job_tasks_path(@job), :class => "btn btn-secondary" %>
     <%= link_to 'Taak aanpassen', edit_job_task_path(@job, @task), :class => "btn btn-secondary" %>

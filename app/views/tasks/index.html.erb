@@ -16,7 +16,7 @@
           <tr>
             <td><%= task.created_at.to_date.iso8601 %></td>
             <td><%= link_to task.description, job_task_path(@job, task) %></td>
-            <td><%= task.file %></td>
+            <td><%= link_to (task.file_identifier), task.file.url, target: '_blank' if task.file? %></td>
             <td>Contactpersoon koppelen</td>
 
           </tr>

@@ -1,4 +1,4 @@
-<%= form_with(model: [job, task], local: true) do |form| %>
+<%= form_with(model: [job, task], local: true, :html => {multipart: true}) do |form| %>
   <%= render "Shared/errors", object: task %>
 
 <form>
@@ -9,8 +9,10 @@
 
   <div class="form_group">
     <%= form.label :Bestand, class: 'form-control' %>
-    <%= form.text_field :file, id: :task_file, class: 'form-control' %>
+    <%= form.file_field :file, class: 'form-control' %>
   </div>
+  <%= form.check_box :remove_file %> Remove file
+
 <br>
   <div class="btn-group" role="group">
     <%= form.submit "Opslaan", :class => "btn btn-secondary" %>
@@ -18,3 +20,6 @@
 <% end %>
 
 </form>
+
+
+
