@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :require_signin
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   # GET /jobs

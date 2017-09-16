@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :require_signin
   before_action :set_job
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 

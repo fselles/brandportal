@@ -10,20 +10,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <!-- Render topbar partial in views/shared -->
+  <%= render "/Shared/topbar" %>
 
   <div class="container">
-
        <div class="row">
           <div class="col-sm-1">
-          <!-- Render menubar partial in views/shared -->
-
           </div>
-          <div class="col-sm-11">
+          <div class="col-sm-10">
             <div>
               <% flash_messages %>
             </div>
                 <%= yield %>
           </div>
+          <div class="col-sm-1">
+          </div>
         </div>
       </div>
+   <%= render "/Shared/footer" %>
 </html>

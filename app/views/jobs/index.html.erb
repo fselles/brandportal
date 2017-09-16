@@ -1,4 +1,4 @@
-<h1>Overzicht jobs</h1>
+<h4>Overzicht jobs</h4>
 
 
 <div class="table-responsive">
@@ -7,7 +7,7 @@
     <tr>
       <th>Jobnr</th>
       <th>Artikelnummer</th>
-      <th>Title</th>
+      <th>Titel</th>
       <th>Actie</th>
       <th>Laatste actie</th>
       <th>Status</th>
@@ -18,8 +18,8 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.id %></td>
-        <td><%= link_to job.article_number, job %></td>
+        <td><%= link_to job.id, job %></td>
+        <td><%= job.article_number %></td>
         <td><%= job.title %></td>
         <td><%= truncate(job.description, :length => 25) %></td>
         <td><%= job.contactperson %></td>
