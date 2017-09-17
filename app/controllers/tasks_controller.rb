@@ -28,6 +28,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = @job.tasks.build(task_params)
+    @task.contactperson = current_user.name
 
     respond_to do |format|
       if @task.save
@@ -43,6 +44,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
+    @task.contactperson = current_user.name
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to job_tasks_path(@job), notice: 'Taak is succesvol opgeslagen.' }
@@ -76,6 +78,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:description, :file, :remove_file)
+      params.require(:task).permit(:description, :file, :remove_file, :contactperson)
     end
 end

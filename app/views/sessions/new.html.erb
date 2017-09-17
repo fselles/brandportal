@@ -1,5 +1,5 @@
 <header id="content-header">
-  <h1>Sign In</h1>
+  <h3>Inloggen</h3>
 </header>
 
 <%= form_tag(session_path) do %>
@@ -10,9 +10,9 @@
     <div class="input-group">
       <%= password_field_tag :password, nil, :class => "form-control", placeholder: "Password" %>
       </div>
-
+      <br>
     <div>
-      <%= submit_tag 'Inloggen' %>
+      <%= submit_tag 'Inloggen', :class => "btn btn-secondary" %>
     </div>
 
 <% end %>

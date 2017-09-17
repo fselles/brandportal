@@ -17,12 +17,12 @@
 
   <tbody>
     <% @jobs.each do |job| %>
-      <tr>
+      <tr class = <%= find_company_name(job) %>>
         <td><%= link_to job.id, job %></td>
         <td><%= job.article_number %></td>
-        <td><%= job.title %></td>
-        <td><%= truncate(job.description, :length => 25) %></td>
-        <td><%= job.contactperson %></td>
+        <td><%= link_to job.title, job %></td>
+        <td><%= find_description(job) %></td>
+        <td><%= find_company_name(job) %></td>
         <td><%= job.status %></td>
         <td><%= link_to 'Taken', job_tasks_path(job) %></td>
       </tr>

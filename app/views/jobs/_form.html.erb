@@ -24,7 +24,7 @@
 
     <div class="form-group">
       <%= form.label :status, class: 'form-control' %>
-      <%= form.text_field :status, id: :job_status, class: 'form-control' %>
+      <%= form.select :status, Job::JOBSTATUS, id: :job_status, class: 'form-control' %>
     </div>
 
     <div class="actions">
@@ -32,3 +32,4 @@
     </div>
   <% end %>
 </form>
+
