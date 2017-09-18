@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 end
   get 'aanmelden' => 'users#new'
   get "inloggen" => "sessions#new"
+  get 'archief' => "jobs#archief"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

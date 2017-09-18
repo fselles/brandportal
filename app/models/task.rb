@@ -3,4 +3,7 @@ class Task < ApplicationRecord
   belongs_to :job
   validates :description, presence: true
 
+ def self.search(search)
+    where("description LIKE ? OR contactperson LIKE ?", "%#{search}%", "%#{search}%")
+  end
 end

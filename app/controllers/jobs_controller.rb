@@ -5,7 +5,19 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    if params[:search]
+      @jobs = Job.active.search(params[:search]).order("created_at DESC")
+    else
+      @jobs = Job.active.order("created_at DESC")
+    end
+  end
+
+  def archief
+    if params[:search]
+      @jobs = Job.archive.search(params[:search]).order("created_at DESC")
+    else
+      @jobs = Job.archive.order("created_at DESC")
+    end
   end
 
   # GET /jobs/1

@@ -12,7 +12,7 @@
       </li>
       <% if current_user %>
       <li class="nav-item">
-        <%= link_to "Jobs", jobs_url, :class => "nav-link"  %>
+        <%= link_to "Jobs", jobs_path, :class => "nav-link"  %>
       </li>
 
       <li class="nav-item dropdown">
@@ -20,6 +20,8 @@
         aria-haspopup="true" aria-expanded="false">Acties
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "Jobs", jobs_path, :class => "dropdown-item"  %>
+          <%= link_to "Archief", archief_path, :class => "dropdown-item"  %>
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -43,8 +45,10 @@
       </li>
       <% end %>
       </ul>
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+       <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search", :class=> "form-control mr-sm-2" %>
+        <%= submit_tag "Search", :name => nil, :class => "btn btn-outline-success my-2 my-sm-0" %>
+      <% end %>
     </form>
   </div>
 </nav>
