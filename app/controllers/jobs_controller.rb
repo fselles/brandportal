@@ -6,17 +6,17 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     if params[:search]
-      @jobs = Job.active.search(params[:search]).order("created_at DESC")
+      @jobs = Job.active.search(params[:search]).paginate(page: params[:page], per_page: 5).order('id DESC')
     else
-      @jobs = Job.active.order("created_at DESC")
+      @jobs = Job.active.paginate(page: params[:page], per_page: 5).order('id DESC')
     end
   end
 
   def archief
     if params[:search]
-      @jobs = Job.archive.search(params[:search]).order("created_at DESC")
+      @jobs = Job.archive.(params[:search]).paginate(page: params[:page], per_page: 5).order('id DESC')
     else
-      @jobs = Job.archive.order("created_at DESC")
+      @jobs = Job.archive.paginate(page: params[:page], per_page: 5).order('id DESC')
     end
   end
 

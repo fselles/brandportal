@@ -8,9 +8,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
       if params[:search]
-      @tasks = @job.tasks.search(params[:search]).order("created_at DESC")
+      @tasks = @job.tasks.search(params[:search]).paginate(page: params[:page], per_page: 5).order('id DESC')
     else
-      @tasks = @job.tasks.all.order("created_at DESC")
+      @tasks = @job.tasks.paginate(page: params[:page], per_page: 5).order('id DESC')
     end
   end
 

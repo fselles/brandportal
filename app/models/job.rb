@@ -11,3 +11,5 @@ class Job < ApplicationRecord
   end
 
 end
+
+

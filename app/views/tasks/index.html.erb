@@ -25,7 +25,12 @@
     </table>
   </div>
     <br>
-
+  <div class="apple_pagination">
+  <div class="page_info">
+    <%= page_entries_info @jobs %>
+  </div>
+  <%= will_paginate @jobs, :container => false %>
+</div>
   <div>
     <%= link_to 'Nieuwe taak', new_job_task_path, :class => "btn btn-secondary"  %>
   </div>
