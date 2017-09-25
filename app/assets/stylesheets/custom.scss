@@ -133,3 +133,29 @@ body > .container {
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
+
+/* Extra Styling overall Auping look n feel 
+---------------------------------------------------*/
+
+.navbar-light .navbar-nav .nav-link {
+  color:#0061AA;
+  }
+
+a.nav-link:hover {
+text-decoration: underline;
+  }
+
+.col-sm-10 {
+margin-top: 50px;
+}
+
+
+.btn-secondary,.btn-secondary:hover {
+  background-color:#0061AA;
+  border-color:#0061AA;
+  color:#FFFFFF;
+}
+a.btn-secondary:hover {
+text-decoration: underline;
+}
+	
