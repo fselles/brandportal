@@ -39,15 +39,16 @@ en:
     page_gap: "&hellip;"
     page_entries_info:
       single_page:
-        zero:  "No %{model} found"
-        one:   "Displaying 1 %{model}"
-        other: "Displaying all %{count} %{model}"
+        zero:  "Geen %{model} gevonden"
+        one:   "Toon 1 %{model}"
+        other: "Toon alles %{count} %{model}"
       single_page_html:
-        zero:  "No %{model} found"
-        one:   "Displaying <b>1</b> %{model}"
-        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+        zero:  "Geen %{model} gevonden"
+        one:   "Tonen <b>1</b> %{model}"
+        other: "Tonen <b>all&nbsp;%{count}</b> %{model}"
 
       multi_page: "Weergeven %{model} %{from} - %{to} van %{count} in totaal"
       multi_page_html: "Weergeven %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> van <b>%{count}</b> in totaal"
+
 
 

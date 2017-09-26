@@ -3,12 +3,12 @@
 
 <form>
   <div class="form_group">
-    <%= form.label :Omschrijving, class: 'form-control' %>
+    <%= form.label :Omschrijving, class: 'form-control-label' %>
     <%= form.text_area :description, id: :task_description, class: 'form-control' %>
   </div>
 
   <div class="form_group">
-    <%= form.label :Bestand, class: 'form-control' %>
+    <%= form.label :Bestand, class: 'form-control-label' %>
     <%= form.file_field :file, class: 'form-control' %>
   </div>
   <%= form.check_box :remove_file %> Verwijder bestand

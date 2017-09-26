@@ -3,27 +3,27 @@
 
   <form>
     <div class="form-group">
-      <%= form.label :contactpersoon, class: 'form-control' %>
+      <%= form.label :contactpersoon, class: 'form-control-label' %>
       <%= form.collection_select(:contactperson, User.all, :name, :name, {prompt: "Selecteer een gebruiker"}, {class: 'form-control'}) %>
     </div>
 
     <div class="form-group">
-      <%= form.label :titel, class: 'form-control' %>
+      <%= form.label :titel, class: 'form-control-label' %>
       <%= form.text_field :title, id: :job_title, class: 'form-control' %>
     </div>
 
     <div class="form-group">
-      <%= form.label :omschrijving, class: 'form-control' %>
+      <%= form.label :omschrijving, class: 'form-control-label' %>
       <%= form.text_area :description, id: :job_description, class: 'form-control' %>
     </div>
 
     <div class="form-group">
-      <%= form.label :artikelnummer, class: 'form-control' %>
+      <%= form.label :artikelnummer, class: 'form-control-label' %>
       <%= form.text_field :article_number, id: :job_article_number, class: 'form-control' %>
     </div>
 
     <div class="form-group">
-      <%= form.label :status, class: 'form-control' %>
+      <%= form.label :status, class: 'form-control-label' %>
       <%= form.select :status, Job::JOBSTATUS, id: :job_status, class: 'form-control' %>
     </div>
 
